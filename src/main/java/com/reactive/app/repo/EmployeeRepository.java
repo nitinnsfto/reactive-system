@@ -6,8 +6,6 @@ import com.reactive.app.dto.Employee;
 
 import reactor.core.publisher.Mono;
 
-public interface EmployeeRepository extends ReactiveCrudRepository{
-
-	//Mono<Employee> findEmployeeById(String id);
+public interface EmployeeRepository extends ReactiveCrudRepository<Employee, Integer>{
 
 }

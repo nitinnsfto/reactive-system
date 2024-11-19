@@ -20,7 +20,7 @@ public class EmployeeController {
 	private EmployeeRepository employeeRepository;
 	
 	@GetMapping("/{id}")
-	private Mono<Employee> getEmployeeById(@PathVariable String id)
+	private Mono<Employee> getEmployeeById(@PathVariable Integer id)
 	 {
 		return employeeRepository.findById(id);
 	 }
