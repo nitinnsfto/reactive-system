@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +17,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/employees")
-@Transactional
+//@Transactional
 public class EmployeeController {
 	
 	
@@ -37,8 +39,14 @@ public class EmployeeController {
 	@GetMapping("/save/{name}")
 	private Mono<Employee> saveEmployee(@PathVariable String name)
 	 {
-		Employee employee = new Employee();
+		Employee employee = new Employee(null, name);
 		//employee.setName(name);
 		return employeeRepository.save(employee);
+	 }
+	
+	@PostMapping("/update")
+	private Mono<Employee> updateEmployee(@RequestBody Employee employee)
+	 {
+		return employeeRepository.updateEmployee(employee);
 	 }
 }
