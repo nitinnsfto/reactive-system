@@ -25,8 +25,8 @@ public class EmployeeController {
 		return employeeRepository.findById(id);
 	 }
 
-	@GetMapping("/{id}")
-	private Flux<Employee> getAllEmployees(@PathVariable String id)
+	@GetMapping
+	private Flux<Employee> getAllEmployees()
 	 {
 		return employeeRepository.findAll();
 	 }
