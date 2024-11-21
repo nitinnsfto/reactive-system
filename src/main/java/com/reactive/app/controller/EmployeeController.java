@@ -47,6 +47,6 @@ public class EmployeeController {
 	@PostMapping("/update")
 	private Mono<Employee> updateEmployee(@RequestBody Employee employee)
 	 {
-		return employeeRepository.updateEmployee(employee);
+		return employeeRepository.save(employee);
 	 }
 }

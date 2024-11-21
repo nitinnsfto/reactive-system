@@ -92,7 +92,7 @@ public class EmployeeRouteConfigTest {
 		.expectStatus()
 		.isOk();
 		
-		verify(mockRemployeeRepo).updateEmployee(employee);
+		verify(mockRemployeeRepo).save(employee);
 	}
 	
 }

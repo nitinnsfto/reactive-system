@@ -8,6 +8,4 @@ import reactor.core.publisher.Mono;
 
 public interface EmployeeRepository extends ReactiveCrudRepository<Employee, Integer>{
 
-	Mono<Employee> updateEmployee(Employee employee);
-
 }
